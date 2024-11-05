@@ -10,9 +10,7 @@ def logo(text):
     # assets 폴더에 logo로 사용할 이미지를 logo.png 이름으로 넣기(flaticon 사이트에서 다운로드)
     rx.image(
       src="/logo.png",
-      width="2.25em",
-      height="auto",
-      border_radius="25%",
+      height="2em",
     ),
     rx.heading(text, size="7", color_scheme="cyan"),
     align_items="center",
@@ -28,8 +26,8 @@ def navbar_comp():
         navbar_link("텍스트", "/text"),
         navbar_link("플렉스", "/flexpage"),
         navbar_link("그리드", "/gridpage"),
+        navbar_link("폼", "/forms"),
         navbar_link("미디어", "/media"),
-        navbar_link("버튼", "/button"),
         navbar_link("그래프", "/graph"),
         navbar_link("컬러", "/color"),
         rx.color_mode.button(),
@@ -41,7 +39,7 @@ def navbar_comp():
       align_items="center",
     ),
     bg=rx.color("indigo", 3), 
-    padding="1em", 
+    padding="0.5em", 
     width="100%",
   )
   
@@ -53,6 +51,6 @@ def navbar(*arg,**kwarg):
     rx.box(
       *arg,
       **kwarg,
-      padding="1em"
-    )
+      padding="1em",
+    ),
   )

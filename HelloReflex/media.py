@@ -8,7 +8,8 @@ class ImageState(rx.State): # State는 버튼 페이지에서 자세히 설명
     url = f"https://picsum.photos/id/1/200/300"
     image = Image.open(requests.get(url, stream=True).raw)
 
-
+# 이미지는 assets 폴더에 넣는 것이 맞는데 run을 이미 한 상태라면 콘솔창에서 ctrl + c를 해서 꺼준 뒤 다시 run을 해야된다. 
+# (또는 assets 폴더에 넣은 이미지를 .web > public 폴더에도 파일을 복사한다. run 할 때만 자동으로 복사되기 때문)
 def media():
     return navbar(
         # 세로로 쌓는 레이아웃 컴포넌트

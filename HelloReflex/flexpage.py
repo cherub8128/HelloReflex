@@ -14,7 +14,7 @@ def mybox(text, w, h):
         height=f"{h}px",
         border = "solid 1px #d2d2d2",  # 윤곽선 선종류 두께 색깔(RGB Hex코드, 구글에 컬러피커 검색)
         margin = "0.5em", # 바깥 여백
-        padding = "0.5em", # 안쪽 여백
+        padding = "1em", # 안쪽 여백
         border_radius = "5px", # 모서리 둥글게 하기
         bg = "#f0f0f0", # 배경색
         # 그림자 x오프셋, y오프셋, 흐림 반경, 퍼짐 반경, 색(rgba a는 알파, 튜토리얼 컬러페이지 참고)
@@ -35,5 +35,6 @@ def flexpage():
             direction = "row", # row, row-reverse, column, column-reverse  가로로 배치, 가로 역순, 세로 배치, 세로 역순
             justify="center", # row일 때 가로 기준 정렬
             align="center", # column일 때 세로 기준 정렬
+            
         ),
     )

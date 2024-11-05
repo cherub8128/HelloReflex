@@ -23,17 +23,17 @@
 - color.py : 컬러 사용법 페이지
 - gridpage.py : card와 grid 레이아웃 컴포넌트 설명
 - media.py : 이미지, 비디오, 음악 컴포넌트 설명
-- button.py : 버튼과 state, event 기본 사용법 설명
+- form.py : 버튼, 체크박스, 인풋, 선택, 슬라이더, 스위치 state, event 기본 사용법 설명
+- templete 폴더 : 버튼, 체크박스, 인풋, 선택, 슬라이더, 스위치를 모아둔 폴더
 
 ## 배우는 순서 (난이도)
 
-1. text.py
-2. flexpage.py
-3. color.py (생략 가능, 참고용)
-4. gridpage.py
-5. media.py
-6. button.py
-7. form.py (추가 예정)
-8. graph.py (수정 예정)
-9. HelloReflex.py
-10. navbar.py
+1. HelloReflex.py
+2. text.py
+3. flexpage.py
+4. color.py (생략 가능, 참고용)
+5. gridpage.py
+6. media.py
+7. navbar.py
+8. form.py
+9. graph.py (수정 예정)
