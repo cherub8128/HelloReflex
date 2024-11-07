@@ -42,26 +42,24 @@ data03 = [
     {"x": 150, "y": 400, "z": 500},
     {"x": 110, "y": 280, "z": 200},
 ]
-
-class MyInput(rx.State):
-    text : str = ""
-
-class MySlider(rx.State):
-    value : int = 0
-    def set_end(self, value:int):
-        self.value = value
-
-class Check(rx.State):
-    check : bool = False
-    def change(self):
-        self.check = not self.check
-        
 class State(rx.State):
     data: List = [
         ["Lionel", "Messi", "PSG"],
         ["Christiano", "Ronaldo", "Al-Nasir"],
     ]
     columns: List[str] = ["First Name", "Last Name"]
+
+
+def state_table():
+    return rx.data_table(data=State.data, columns=State.columns)
+
+def pandas_table():
+    return rx.data_table(
+            data=nba_data[["Name", "Height", "Age"]],
+            pagination=True,
+            search=True,
+            sort=True,
+    )
 
 def chart1():
     return rx.recharts.bar_chart(
@@ -122,12 +120,16 @@ def graph():
     return navbar(
         rx.tabs.root(
             rx.tabs.list(
+                rx.tabs.trigger("데이터테이블1",value="stete_table"),
+                rx.tabs.trigger("데이터테이블2",value="pandas_table"),
                 rx.tabs.trigger("바차트",value="chart1"),
                 rx.tabs.trigger("라인차트",value="chart2"),
                 rx.tabs.trigger("파이차트",value="chart3"),
                 rx.tabs.trigger("레이더차트",value="chart4"),
                 rx.tabs.trigger("산점도",value="chart5"),
             ),
+            rx.tabs.content(state_table(),value="stete_table"),
+            rx.tabs.content(pandas_table(),value="pandas_table"),
             rx.tabs.content(chart1(),value="chart1"),
             rx.tabs.content(chart2(),value="chart2"),
             rx.tabs.content(chart3(),value="chart3"),
