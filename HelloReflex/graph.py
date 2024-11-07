@@ -3,6 +3,7 @@
 import reflex as rx
 import pandas as pd
 from typing import List
+from .navbar import navbar
 
 nba_data = pd.read_csv("https://media.geeksforgeeks.org/wp-content/uploads/nba.csv")
 data = [
@@ -61,3 +62,77 @@ class State(rx.State):
         ["Christiano", "Ronaldo", "Al-Nasir"],
     ]
     columns: List[str] = ["First Name", "Last Name"]
+
+def chart1():
+    return rx.recharts.bar_chart(
+        rx.recharts.bar(
+            data_key="uv",
+            stroke=rx.color("accent", 9),
+            fill=rx.color("accent", 8),
+        ),
+        rx.recharts.x_axis(data_key="name"),
+        rx.recharts.y_axis(),
+        data=data, width="100%",height=250)
+
+def chart2():
+    return rx.recharts.line_chart(
+        rx.recharts.line(data_key="pv"),
+        rx.recharts.line(data_key="uv"),
+        rx.recharts.x_axis(data_key="name"),
+        rx.recharts.y_axis(),
+        data=data,
+        width="100%",
+        height=300,
+    )
+
+def chart3():
+    return rx.recharts.pie_chart(
+        rx.recharts.pie(
+            data=data01,
+            data_key="value",
+            name_key="name",
+            fill="#8884d8",
+            label=True,
+        ),
+        width="100%", height=300, )
+
+def chart4():
+    return rx.recharts.radar_chart(
+        rx.recharts.radar(data_key="A", stroke="#8884d8", fill="#8884d8"),
+        rx.recharts.polar_grid(),
+        rx.recharts.polar_angle_axis(data_key="과목"),
+        rx.recharts.polar_radius_axis(angle=90, domain=[0, 100]),
+        data=data02,
+        width="100%",
+        height=300,
+    )
+
+def chart5():
+    return rx.recharts.scatter_chart(
+        rx.recharts.scatter(data=data03,fill="#8884d8"),
+        rx.recharts.x_axis(data_key="x", type_="number"),
+        rx.recharts.y_axis(data_key="y"),
+        rx.recharts.z_axis(data_key="z",range=[200, 500],),
+        width="100%",
+        height=300,
+    )
+
+
+def graph():
+    return navbar(
+        rx.tabs.root(
+            rx.tabs.list(
+                rx.tabs.trigger("바차트",value="chart1"),
+                rx.tabs.trigger("라인차트",value="chart2"),
+                rx.tabs.trigger("파이차트",value="chart3"),
+                rx.tabs.trigger("레이더차트",value="chart4"),
+                rx.tabs.trigger("산점도",value="chart5"),
+            ),
+            rx.tabs.content(chart1(),value="chart1"),
+            rx.tabs.content(chart2(),value="chart2"),
+            rx.tabs.content(chart3(),value="chart3"),
+            rx.tabs.content(chart4(),value="chart4"),
+            rx.tabs.content(chart5(),value="chart5"),
+            defalut_value="chart1"
+        )
+    )

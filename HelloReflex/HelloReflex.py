@@ -6,6 +6,7 @@ from .gridpage import gridpage
 from .media import media
 from .forms import forms
 from .color import color
+from .graph import graph
 
 # em에 영향을 주는 폰트 사이즈
 style = {
@@ -26,3 +27,4 @@ app.add_page(gridpage)
 app.add_page(media)
 app.add_page(forms)
 app.add_page(color)
+app.add_page(graph)
