@@ -26,11 +26,11 @@ def color():
                 bg = rx.color("grass", 3),
             ),
             rx.card(
-                rx.text("색상을 지정하는 방법4: Radix Color Var \"var(--mint-3)\""),
+                rx.text("색상을 지정하는 방법5: Radix Color Var \"var(--mint-3)\""),
                 bg = "var(--mint-3)",
             ),
             rx.card(
-                rx.text("색상을 지정하는 방법5: Radix Color Scheme", color_scheme = "crimson"),
+                rx.text("색상을 지정하는 방법6: Radix Color Scheme", color_scheme = "crimson"),
                 rx.text("매개변수가 있는 특정 컴포넌트(버튼,텍스트 등)에서만 사용 가능하다."),
             ),
             padding="1em"
