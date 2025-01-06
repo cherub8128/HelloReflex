@@ -1,6 +1,8 @@
 # 송도고등학교 정보 수업을 위한 Reflex 튜토리얼 예제
 
-## 버전: 0.9v (2024-11-07 최종 수정)
+## 버전: 0.91v (2025-01-06 최종 수정)
+
+## [실제 완성된 사이트 링크](https://HelloReflex-red-book.reflex.run)
 
 ## 사용 방법
 
@@ -35,5 +37,5 @@
 5. gridpage.py
 6. media.py
 7. navbar.py
-8. form.py
+8. form.py (templetes 폴더)
 9. graph.py

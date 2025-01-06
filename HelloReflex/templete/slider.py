@@ -1,8 +1,9 @@
 import reflex as rx
+import typing
 
 class SliderState(rx.State):
     value : int = 10 # on_value_commit은 set 함수가 동작하지 않으므로 직접 만들어야함
-    def set_end(self, value: list[int]): 
+    def set_end(self, value: list[typing.Union[int, float]]): 
         self.value = value[0]
 
     
